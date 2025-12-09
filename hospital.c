@@ -197,12 +197,12 @@ void main(int argc, char* argv[]) {
 
             // --- CORRECCIÓN PARA EVITAR MENSAJES HUÉRFANOS ---
             printf("\n[Main] Deteniendo procesos hijos...\n");
-            kill(pid_hospital, SIGKILL);  // <--- AÑADIR: Asegura que Hospital muera YA
-            kill(pid_recepcion, SIGKILL); // <--- AÑADIR: Asegura que Recepción muera YA
+            kill(pid_hospital, SIGKILL);  // Asegura que Hospital muera YA
+            kill(pid_recepcion, SIGKILL); // Asegura que Recepción muera YA
             
             // Esperamos un momento para que el sistema operativo limpie sus salidas
-            wait(NULL); // <--- AÑADIR: Recoger restos del primer kill
-            wait(NULL); // <--- AÑADIR: Recoger restos del segundo kill
+            wait(NULL); // Recoger restos del primer kill
+            wait(NULL); // Recoger restos del segundo kill
             // --------------------------------------------------
 
             printf("[Main] Limpiando recursos...\n");
